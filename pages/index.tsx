@@ -1,6 +1,7 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
+import ToogleBar from './components/ToogleBar'
 import WordsRow from './components/WordsRow'
 
 const Home: NextPage = () => {
@@ -12,11 +13,11 @@ const Home: NextPage = () => {
       </Head>
 
       <main className="flex w-full flex-1 flex-col items-center justify-center px-20 text-center">
-      <WordsRow word={'holaaaaaa'} typedWord={'hoala'} isChecked={true}/>
-      <WordsRow word={'holaaaaaa'} typedWord={'asdsa'} isChecked={false}/>
-      <WordsRow word={'holaaaaaa'} typedWord={'asdsa'} isChecked={false}/>
-      <WordsRow word={'holaaaaaa'} typedWord={'asdsa'} isChecked={false}/>
-      <WordsRow word={'holaaaaaa'} typedWord={'asdsa'} isChecked={false}/>
+        <WordsRow word={'testing'} typedWord={'testing'} isChecked={true}/>
+        <WordsRow word={'testing'} typedWord={'testing'} isChecked={false}/>
+        <WordsRow word={''} typedWord={''} isChecked={false}/>
+        <WordsRow word={''} typedWord={''} isChecked={false}/>
+        <WordsRow word={''} typedWord={''} isChecked={false}/>
       </main>
 
     </div>
