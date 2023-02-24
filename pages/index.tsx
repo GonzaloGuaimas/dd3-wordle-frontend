@@ -12,6 +12,8 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+      <ToogleBar/>
+
       <main className="flex w-full flex-1 flex-col items-center justify-center px-20 text-center">
         <WordsRow word={'testing'} typedWord={'testing'} isChecked={true}/>
         <WordsRow word={'testing'} typedWord={'testing'} isChecked={false}/>
