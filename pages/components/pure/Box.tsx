@@ -1,8 +1,8 @@
 import React from 'react'
 
-const Box = ({ word, bgColor }: { word: string, bgColor: string }) => {
+const Box = ({ word, bgColor, style }: { word: string, bgColor: string, style: string}) => {
   return (
-    <div className={`${bgColor} rounded-md w-20 h-20 flex justify-center items-center text-white uppercase font-bold text-3xl`}>
+    <div className={`${bgColor} rounded-md flex justify-center items-center text-white uppercase font-bold ${style}`}>
         {word}
     </div>
   )

@@ -4,7 +4,7 @@ import StatsIcon from './pure/statsIcon'
 
 const ToogleBar = () => {
   return (
-    <div className='bg-toogle-bar flex justify-between items-center w-3/5 h-20 px-4 rounded-xl'>
+    <div className='bg-toogle-bar flex justify-between items-center w-full h-20 px-4 rounded-xl mb-20'>
         <HelpIcon/>
         <h1 className='font-bold text-3xl'>
           WORDLE
