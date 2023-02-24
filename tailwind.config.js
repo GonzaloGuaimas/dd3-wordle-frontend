@@ -9,9 +9,12 @@ module.exports = {
     extend: {
       colors: {
         'grey-box': '#939B9F',
+        'grey-key': '#818181',
+        'grey-default-key': '#D3D6DA',
         'green-box': '#66A060',
         'yellow-box': '#CEB02C',
         'toogle-bar': '#F3F3F3',
+        'black-font': '#56575E'
       },
     },
   },
