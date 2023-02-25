@@ -1,9 +1,9 @@
 import React from 'react'
 import Box from './pure/Box'
 
-const HelpModal = ({ showHelpModal, hideModal }: { showHelpModal: boolean, hideModal: Function }) => {
+const HelpModal = ({ showModal, hideModal }: { showModal: boolean, hideModal: Function }) => {
   return (
-    <div className={showHelpModal ? "fixed w-full min-h-screen bg-opacity-bg flex flex-col items-center justify-center" : "hidden"}>
+    <div className={showModal ? "fixed w-full min-h-screen bg-opacity-bg flex flex-col items-center justify-center" : "hidden"}>
         <div className="w-2/4 md:w-2/4 lg:w-2/5 mx-auto p-5 rounded-2xl shadow-lg border-black border-2 bg-white">
             <div className="mt-3 text-center">
                 <h2 className="text-xl text-black font-extrabold">Cómo jugar</h2>
