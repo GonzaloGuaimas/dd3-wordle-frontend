@@ -4,7 +4,7 @@ import Box from './pure/Box'
 const HelpModal = ({ showModal, hideModal }: { showModal: boolean, hideModal: Function }) => {
   return (
     <div className={showModal ? "fixed w-full min-h-screen bg-opacity-bg flex flex-col items-center justify-center" : "hidden"}>
-        <div className="w-2/4 md:w-2/4 lg:w-2/5 mx-auto p-5 rounded-2xl shadow-lg border-black border-2 bg-white">
+        <div className="w-2/4 md:w-2/4 lg:w-2/5 mx-auto p-5 rounded-2xl shadow-lg border-black border-2 bg-grey-bg">
             <div className="mt-3 text-center">
                 <h2 className="text-xl text-black font-extrabold">Cómo jugar</h2>
                 <div className="flex flex-col gap-y-2 mt-5 text-sm text-black font-semibold text-start">
