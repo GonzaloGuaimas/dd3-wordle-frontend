@@ -1,21 +1,22 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import Image from 'next/image'
+import { useState } from 'react'
+import HelpModal from './components/HelpModal'
 import KeyBoard from './components/KeyBoard'
 import ToogleBar from './components/ToogleBar'
 import WordsRow from './components/WordsRow'
 
 const Home: NextPage = () => {
+  const [showHelpModal, setShowHelpModal] = useState(false)
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center py-2 px-5">
+    <div className="min-h-screen flex flex-col items-center justify-center">
       <Head>
         <title>DDR WORDLE</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-
-      <main className="flex w-full min-h-screen flex-1 flex-col items-center justify-center text-center">
-        <ToogleBar/>
+      <main className="flex w-3/4 md:w-3/5 lg:w-2/6 min-h-screen flex-1 flex-col items-center justify-center text-center py-2 px-5">
+        <ToogleBar setShowHelpModal={setShowHelpModal}/>
         <WordsRow word={'testing'} typedWord={'testing'} isChecked={true}/>
         <WordsRow word={'testing'} typedWord={'testing'} isChecked={false}/>
         <WordsRow word={''} typedWord={''} isChecked={false}/>
@@ -23,8 +24,7 @@ const Home: NextPage = () => {
         <WordsRow word={''} typedWord={''} isChecked={false}/>
         <KeyBoard/>
       </main>
-
-
+      <HelpModal showHelpModal={showHelpModal} hideModal={() => setShowHelpModal(false)}/>
     </div>
   )
 }

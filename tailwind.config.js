@@ -8,6 +8,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        'opacity-bg': '#ffffffde',
         'grey-box': '#939B9F',
         'grey-key': '#818181',
         'grey-default-key': '#D3D6DA',
