@@ -18,26 +18,29 @@ const Home: NextPage = () => {
   const { loadGame } = useGame(stats, currentGame, setCurrentGame, setStats, setShowHelpModal, setShowStatsModal)
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-white-bg dark:bg-blue-bg">
-      <Head>
-        <title>DDR WORDLE</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+    <>
+      <div className="min-h-screen w-full text-center items-center justify-center bg-white-bg dark:bg-blue-bg">
+        {/* <div className="min-h-screen flex flex-col items-center justify-center bg-white-bg dark:bg-blue-bg"> */}
+        <Head>
+          <title>DDR WORDLE</title>
+          <link rel="icon" href="/favicon.ico" />
+        </Head>
 
-      <main className="flex w-3/4 md:w-3/5 lg:w-2/6 min-h-screen flex-1 flex-col items-center justify-center text-center py-2 px-5">
-        <ToogleBar showHelp={() => setShowHelpModal(true)} showStats={() =>  setShowStatsModal((prev) => ({...prev, show: true}))}/>
-        {
-            Array(5).fill(0).map((_, i) => (
-                <WordsRow key={i} word={currentGame?.currentWord} typedWord={currentGame?.typedWords[i]} isChecked={currentGame?.rowsComplete[i]} />
+        <main className="flex min-h-screen flex-1 flex-col items-center justify-center text-center py-2 px-5 md:w-2/5 mx-auto">
+          <ToogleBar showHelp={() => setShowHelpModal(true)} showStats={() =>  setShowStatsModal({show: true, isEnd: false})}/>
+          {
+              Array(5).fill(0).map((_, i) => (
+                  <WordsRow key={i} word={currentGame?.currentWord} typedWord={currentGame?.typedWords[i]} isChecked={currentGame?.rowsComplete[i]} />
+                )
               )
-            )
-        }
-        <KeyBoard/>
-      </main>
-      <HelpModal showModal={showHelpModal} hideModal={() => setShowHelpModal(false)}/>
-      <StatsModal showModal={showStatsModal} hideModal={() => setShowStatsModal({isEnd: true, show: false})} stats={stats} currentGame={currentGame} loadGame={loadGame}/>
+          }
+          <KeyBoard/>
+        </main>
 
-    </div>
+      </div>
+        <HelpModal showModal={showHelpModal} hideModal={() => setShowHelpModal(false)}/>
+        <StatsModal showModal={showStatsModal} hideModal={() => setShowStatsModal({isEnd: true, show: false})} stats={stats} currentGame={currentGame} loadGame={loadGame}/>
+    </>
   )
 }
 

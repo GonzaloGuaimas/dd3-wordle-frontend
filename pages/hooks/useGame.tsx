@@ -7,6 +7,7 @@ import { isFirstTime } from '../services/isFirstTime'
 const useGame = (stats: StoredGameStats, currentGame: StoredGameState, setCurrentGame: Function, setStats: Function, setShowHelpModal: Function, setShowStatsModal: Function) => {
 
   useEffect(() => {
+    console.log('entra1')
     if (isFirstTime()) setShowHelpModal(true), initStats()
 
     setStats(getStatsFromLocalStorage())
@@ -17,7 +18,11 @@ const useGame = (stats: StoredGameStats, currentGame: StoredGameState, setCurren
   useEffect(() => {
     console.log(currentGame)
     if (currentGame.currentWord != '') {
+      console.log(currentGame)
+      console.log(currentGame.rowsComplete.every((_) => _))
       if (isGuessed(currentGame) || currentGame.rowsComplete.every((_) => _)){
+        console.log('entra')
+        setShowStatsModal({show: true, isEnd: true})
         setStats((prevStats: StoredGameStats) => (
           {
             winsCounter: isGuessed(currentGame) ? prevStats.winsCounter++ : prevStats.winsCounter,
@@ -25,7 +30,6 @@ const useGame = (stats: StoredGameStats, currentGame: StoredGameState, setCurren
             wordsPlayed: [...prevStats.wordsPlayed, currentGame.currentWord]
           }
         ))
-        setShowStatsModal({show: true, isEnd: true})
       }
       saveGameToLocalStorage(currentGame)
     }

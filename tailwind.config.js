@@ -27,6 +27,9 @@ module.exports = {
       },
       borderWidth: {
         '1': '1px'
+      },
+      borderRadius: {
+        'box-radius': '5px'
       }
     },
   },

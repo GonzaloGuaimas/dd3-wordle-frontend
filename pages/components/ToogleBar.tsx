@@ -4,7 +4,7 @@ import StatsIcon from './pure/StatsIcon'
 
 const ToogleBar = ({ showHelp, showStats }: { showHelp: Function, showStats: Function }) => {
   return (
-    <div className='bg-grey-bg dark:bg-containter-bg-dark flex justify-between items-center w-full h-20 px-4 rounded-xl mb-20'>
+    <div className='bg-grey-bg dark:bg-containter-bg-dark flex justify-between items-center w-full px-4 py-4 rounded-xl mb-10'>
         <button onClick={() => showHelp()}>
           <HelpIcon/>
         </button>
