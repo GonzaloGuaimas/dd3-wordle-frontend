@@ -12,8 +12,8 @@ const WordsRow = ({ word, typedWord, isChecked }: { word: string, typedWord: str
                 (word.includes(typedWord[i])) ? 'bg-yellow-box' : 'bg-grey-box'
 
                 return (
-                    <div>
-                        <Box word={word[i]} bgColor={bgColor} style={'w-20 h-20 text-3xl'}/>
+                    <div key={i}>
+                        <Box word={typedWord[i]} bgColor={bgColor} style={'w-20 h-20 text-3xl'}/>
                     </div>
                 )
             }
