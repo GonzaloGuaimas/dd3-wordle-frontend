@@ -1,8 +1,8 @@
 import React from 'react'
-import { BackSpaceIcon } from './pure/BackSpaceIcon'
-import Box from './pure/Box'
+import { BackSpaceIcon } from '../pure/BackSpaceIcon'
+import Key from './Key'
 
-const KeyBoard = () => {
+const KeyBoard = ({ handleOnClickKeyDown }: { handleOnClickKeyDown: Function }) => {
     const firstRow = 'qwertyuiop'
     const secondRow = 'asdfghjklñ'
     const thirdRow = 'zxcvbnm'
@@ -12,25 +12,27 @@ const KeyBoard = () => {
             <div className='flex justify-center gap-2'>
                 {
                     firstRow.split('').map((word) => 
-                        <Box key={word} word={word} bgColor={'bg-grey-default-key dark:bg-blue-default-key'} style={'w-10 h-10 md:w-10 md:h-10 text-sm font-bolder dark:text-white'}/>
+                        <Key key={word} word={word} handleOnClickKeyDown={handleOnClickKeyDown}/>
                     )
                 }
             </div>
             <div className='flex justify-end ml-10 gap-2'>
                 {
                     secondRow.split('').map((word) => 
-                        <Box key={word} word={word} bgColor={'bg-grey-default-key dark:bg-blue-default-key'} style={'w-10 h-10 md:w-10 md:h-10 text-sm font-bolder dark:text-white'}/>
+                        <Key key={word} word={word} handleOnClickKeyDown={handleOnClickKeyDown}/>
                     )
                 }
             </div>
             <div className='flex gap-2'>
-                <Box word={'ENTER'} bgColor={'bg-grey-default-key dark:bg-blue-default-key'} style={'w-auto h-10 px-2 md:px-3 md:h-10 text-sm font-bolder dark:text-white'}/>
+                <Key word={'Enter'} handleOnClickKeyDown={handleOnClickKeyDown}/>
                 {
                     thirdRow.split('').map((word) => 
-                        <Box key={word} word={word} bgColor={'bg-grey-default-key dark:bg-blue-default-key'} style={'w-10 h-10 md:w-10 md:h-10 text-sm font-bolder dark:text-white'}/>
+                        <Key key={word} word={word} handleOnClickKeyDown={handleOnClickKeyDown}/>
                     )
                 }
-                <button 
+                <button
+                    onClick={(e) => handleOnClickKeyDown(e)}
+                    value='Backspace'
                     className='rounded-box-radius flex justify-center items-center content-center uppercase font-bold w-auto h-10 px-2 md:px-3 md:h-10 text-sm font-bolder bg-grey-default-key dark:bg-blue-default-key'>
                     <BackSpaceIcon/>
                 </button>

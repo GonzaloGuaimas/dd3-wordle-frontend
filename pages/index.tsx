@@ -2,11 +2,12 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import { useState } from 'react'
 import HelpModal from '../components/HelpModal'
-import KeyBoard from '../components/KeyBoard'
+import KeyBoard from '../components/keyboard/KeyBoard'
 import StatsModal from '../components/StatsModal'
 import ToogleBar from '../components/ToogleBar'
 import WordsRow from '../components/WordsRow'
 import useGame from '../hooks/useGame'
+import useKeyBoard from '../hooks/useKeyBoard'
 import { defaultGameState, defaultGameStats,StoredGameState, StoredGameStats } from '../lib/localStorage'
 
 const Home: NextPage = () => {
@@ -16,6 +17,7 @@ const Home: NextPage = () => {
   const [showStatsModal, setShowStatsModal] = useState({show: false, isEnd: false})
   
   const { loadGame } = useGame(stats, currentGame, setCurrentGame, setStats, setShowHelpModal, setShowStatsModal)
+  const { handleOnClickKeyDown } = useKeyBoard(currentGame, setCurrentGame)
 
   return (
     <>
@@ -32,7 +34,7 @@ const Home: NextPage = () => {
                 )
               )
           }
-          <KeyBoard/>
+          <KeyBoard handleOnClickKeyDown={handleOnClickKeyDown}/>
         </main>
       </div>
       <HelpModal showModal={showHelpModal} hideModal={() => setShowHelpModal(false)}/>
