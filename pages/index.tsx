@@ -34,7 +34,7 @@ const Home: NextPage = () => {
                 )
               )
           }
-          <KeyBoard handleOnClickKeyDown={handleOnClickKeyDown}/>
+          <KeyBoard handleOnClickKeyDown={handleOnClickKeyDown} currentGame={currentGame}/>
         </main>
       </div>
       <HelpModal showModal={showHelpModal} hideModal={() => setShowHelpModal(false)}/>
