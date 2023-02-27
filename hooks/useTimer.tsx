@@ -8,6 +8,7 @@ const useTimer = (setTime: Function) => {
         setTime(Number(localStorage.getItem('countdownTime')))
     } catch (error) {
         setTime(60 * 5)
+        localStorage.setItem('countdownTime', (60 * 5).toString());
     }
 
   }, [])
@@ -29,7 +30,7 @@ const useTimer = (setTime: Function) => {
 
 
   const handleReset = () => {
-    setTime(10 * 60);
+    setTime(60 * 5);
     localStorage.setItem('countdownTime', (60 * 5).toString());
   };
 
