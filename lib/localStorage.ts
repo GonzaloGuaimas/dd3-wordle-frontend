@@ -51,3 +51,16 @@ export const getStatsFromLocalStorage = () => {
         return defaultGameStats
     }
 }
+
+
+export const saveTimeToLocalStorage = (time: number) => {
+    localStorage.setItem('countdownTime', (time).toString());
+}
+
+export const getTimeFromLocalStorage = () => {
+    try {
+        return localStorage.getItem('countdownTime')
+    } catch (error) {
+        return 60 * 5
+    }
+}

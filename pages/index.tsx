@@ -18,9 +18,9 @@ const Home: NextPage = () => {
   const [showStatsModal, setShowStatsModal] = useState({show: false, isEnd: false})
   const [time, setTime] = useState(0)
 
-  const { loadGame } = useGame(stats, currentGame, setCurrentGame, setStats, setShowHelpModal, setShowStatsModal)
+  const { loadGame } = useGame(stats, currentGame, setCurrentGame, setStats, setShowHelpModal, setShowStatsModal, setTime)
   const { handleOnClickKeyDown } = useKeyBoard(currentGame, setCurrentGame)
-  const { handleReset } = useTimer(setTime)
+  const { handleReset } = useTimer(setTime, loadGame, setShowStatsModal)
 
   return (
     <>
