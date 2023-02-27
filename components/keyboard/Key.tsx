@@ -1,10 +1,11 @@
 import React from 'react'
 
-const Key = ({ word, handleOnClickKeyDown, bgColor }: { word: string, handleOnClickKeyDown: Function, bgColor: string }) => {
+const Key = ({ word, handleOnClickKeyDown, style }: { word: string, handleOnClickKeyDown: Function, style: string }) => {
   return (
     <button onClick={(e) => handleOnClickKeyDown(e)}
         value={word}
-        className={`${bgColor} w-10 h-10 md:w-10 md:h-10 text-sm font-bolder dark:text-white  rounded-box-radius flex justify-center items-center content-center uppercase font-bold `}>
+        type='button'
+        className={`${style} hover:bg-sky-700 w-10 h-10 md:w-10 md:h-10 text-sm font-bolder dark:text-white  rounded-box-radius flex justify-center items-center content-center uppercase font-bold`}>
         {word}
     </button>
   )

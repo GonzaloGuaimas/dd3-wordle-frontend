@@ -2,6 +2,7 @@ import React from 'react'
 import { StoredGameState } from '../../lib/localStorage'
 import { BackSpaceIcon } from '../pure/BackSpaceIcon'
 import Key from './Key'
+import KeySpecial from './KeySpecial'
 
 const KeyBoard = ({ handleOnClickKeyDown, currentGame }: { handleOnClickKeyDown: Function, currentGame: StoredGameState }) => {
     const firstRow = 'qwertyuiop'
@@ -30,7 +31,7 @@ const KeyBoard = ({ handleOnClickKeyDown, currentGame }: { handleOnClickKeyDown:
             <div className='flex justify-center gap-2'>
                 {
                     firstRow.split('').map((word) => {
-                            return <Key key={word} word={word} handleOnClickKeyDown={handleOnClickKeyDown} bgColor={resolveColor(word)}/>
+                            return <Key key={word} word={word} handleOnClickKeyDown={handleOnClickKeyDown} style={resolveColor(word)}/>
                         } 
                     )
                 }
@@ -38,23 +39,23 @@ const KeyBoard = ({ handleOnClickKeyDown, currentGame }: { handleOnClickKeyDown:
             <div className='flex justify-end ml-10 gap-2'>
                 {
                     secondRow.split('').map((word) => 
-                        <Key key={word} word={word} handleOnClickKeyDown={handleOnClickKeyDown} bgColor={resolveColor(word)}/>
+                        <Key key={word} word={word} handleOnClickKeyDown={handleOnClickKeyDown} style={resolveColor(word)}/>
                     )
                 }
             </div>
             <div className='flex gap-2'>
-                <Key word={'Enter'} handleOnClickKeyDown={handleOnClickKeyDown} bgColor={resolveColor('Enter')}/>
+                <KeySpecial handleOnClickKeyDown={handleOnClickKeyDown} value={'Enter'}>
+                    <p className='font-bolder font-bold'>Enter</p>
+                </KeySpecial>
+                
                 {
                     thirdRow.split('').map((word) => 
-                        <Key key={word} word={word} handleOnClickKeyDown={handleOnClickKeyDown} bgColor={resolveColor(word)}/>
+                        <Key key={word} word={word} handleOnClickKeyDown={handleOnClickKeyDown} style={resolveColor(word)}/>
                     )
                 }
-                <button
-                    onClick={(e) => handleOnClickKeyDown(e)}
-                    value='Backspace'
-                    className='rounded-box-radius flex justify-center items-center content-center uppercase font-bold w-auto h-10 px-2 md:px-3 md:h-10 text-sm font-bolder bg-grey-default-key dark:bg-blue-default-key'>
+                <KeySpecial handleOnClickKeyDown={handleOnClickKeyDown} value={'Backspace'}>
                     <BackSpaceIcon/>
-                </button>
+                </KeySpecial>
             </div>
         </div>
     </div>

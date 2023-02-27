@@ -7,7 +7,7 @@ const HelpModal = ({ showModal, hideModal }: { showModal: boolean, hideModal: Fu
         <div className="modal-container">
             <div className="mt-3 text-center">
                 <h2>Cómo jugar</h2>
-                <div className="flex flex-col gap-y-1 mt-5 text-start">
+                <div className="flex flex-col gap-y-1 mt-3 text-start">
                     <p>Adivina la palabra oculta en cinco intentos.</p>
                     <p>Cada intento debe ser una palabra válida de 5 letras.</p>
                     <p>Después de cada intento el color de las letras cambia para mostrar qué tan cerca estás de acertar la palabra.</p>
@@ -23,7 +23,7 @@ const HelpModal = ({ showModal, hideModal }: { showModal: boolean, hideModal: Fu
                     <div className='flex gap-2 justify-center mt-1'>
                         <Box word={'V'} bgColor={'bg-white'} style={'w-12 h-12 text-black text-md md:text-2xl border-1 border-black dark:border-grey-box dark:bg-opacity-0 dark:text-white'}/>
                         <Box word={'O'} bgColor={'bg-white'} style={'w-12 h-12 text-black text-md md:text-2xl border-1 border-black dark:border-grey-box dark:bg-opacity-0 dark:text-white'}/>
-                        <Box word={'C'} bgColor={'bg-yellow-box'} style={'w-12 h-12 text-black text-md md:text-2xl border-1 border-black dark:text-white'}/>
+                        <Box word={'C'} bgColor={'bg-yellow-box'} style={'w-12 h-12 text-black text-md md:text-2xl border-black dark:text-white'}/>
                         <Box word={'A'} bgColor={'bg-white'} style={'w-12 h-12 text-black text-md md:text-2xl border-1 border-black dark:border-grey-box dark:bg-opacity-0 dark:text-white'}/>
                         <Box word={'L'} bgColor={'bg-white'} style={'w-12 h-12 text-black text-md md:text-2xl border-1 border-black dark:border-grey-box dark:bg-opacity-0 dark:text-white'}/>
                     </div>
@@ -33,7 +33,7 @@ const HelpModal = ({ showModal, hideModal }: { showModal: boolean, hideModal: Fu
                         <Box word={'A'} bgColor={'bg-white'} style={'w-12 h-12 text-black text-md md:text-2xl border-1 border-black dark:border-grey-box dark:bg-opacity-0 dark:text-white'}/>
                         <Box word={'N'} bgColor={'bg-white'} style={'w-12 h-12 text-black text-md md:text-2xl border-1 border-black dark:border-grey-box dark:bg-opacity-0 dark:text-white'}/>
                         <Box word={'T'} bgColor={'bg-white'} style={'w-12 h-12 text-black text-md md:text-2xl border-1 border-black dark:border-grey-box dark:bg-opacity-0 dark:text-white'}/>
-                        <Box word={'O'} bgColor={'bg-grey-box'} style={'w-12 h-12 text-black text-md md:text-2xl border-1 border-black dark:text-white'}/>
+                        <Box word={'O'} bgColor={'bg-grey-box'} style={'w-12 h-12 text-black text-md md:text-2xl border-black dark:text-white'}/>
                     </div>
                     <p>La letra <strong>O</strong> no está en la palabra.</p>
                     <p className='mt-3'>Pueden haber letras repetidas. Las pistas son independientes para cada letra.</p>
