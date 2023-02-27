@@ -1,13 +1,13 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import { useState } from 'react'
-import HelpModal from '../components/HelpModal'
-import KeyBoard from '../components/KeyBoard'
-import StatsModal from '../components/StatsModal'
-import ToogleBar from '../components/ToogleBar'
-import WordsRow from '../components/WordsRow'
-import useGame from '../hooks/useGame'
-import { defaultGameState, defaultGameStats,StoredGameState, StoredGameStats } from '../lib/localStorage'
+import HelpModal from './components/HelpModal'
+import KeyBoard from './components/KeyBoard'
+import StatsModal from './components/StatsModal'
+import ToogleBar from './components/ToogleBar'
+import WordsRow from './components/WordsRow'
+import useGame from './hooks/useGame'
+import { defaultGameState, defaultGameStats,StoredGameState, StoredGameStats } from './lib/localStorage'
 
 const Home: NextPage = () => {
   const [currentGame, setCurrentGame] = useState<StoredGameState>(defaultGameState)
