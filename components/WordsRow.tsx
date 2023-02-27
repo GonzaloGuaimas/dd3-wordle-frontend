@@ -13,7 +13,7 @@ const WordsRow = ({ word, typedWord, isChecked }: { word: string, typedWord: str
 
                 return (
                     <div key={i}>
-                        <Box word={typedWord[i]} bgColor={bgColor} style={'text-3xl h-12 w-12'}/>
+                        <Box word={typedWord[i]} bgColor={bgColor} style={'text-3xl h-12 w-12 text-white'}/>
                     </div>
                 )
             }

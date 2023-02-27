@@ -13,27 +13,27 @@ const HelpModal = ({ showModal, hideModal }: { showModal: boolean, hideModal: Fu
                     <p>Después de cada intento el color de las letras cambia para mostrar qué tan cerca estás de acertar la palabra.</p>
                     <p className='font-bold'>Ejemplos</p>
                     <div className='flex gap-2 justify-center mt-1'>
-                        <Box word={'G'} bgColor={'bg-green-box'} style={'w-12 h-12 text-black text-md md:text-2xl'}/>
-                        <Box word={'A'} bgColor={'bg-white'} style={'w-12 h-12 text-black text-md md:text-2xl border-1 border-black dark:border-grey-box dark:bg-opacity-0'}/>
-                        <Box word={'T'} bgColor={'bg-white'} style={'w-12 h-12 text-black text-md md:text-2xl border-1 border-black dark:border-grey-box dark:bg-opacity-0'}/>
-                        <Box word={'O'} bgColor={'bg-white'} style={'w-12 h-12 text-black text-md md:text-2xl border-1 border-black dark:border-grey-box dark:bg-opacity-0'}/>
-                        <Box word={'S'} bgColor={'bg-white'} style={'w-12 h-12 text-black text-md md:text-2xl border-1 border-black dark:border-grey-box dark:bg-opacity-0'}/>
+                        <Box word={'G'} bgColor={'bg-green-box'} style={'w-12 h-12 text-black text-md md:text-2xl dark:text-white'}/>
+                        <Box word={'A'} bgColor={'bg-white'} style={'w-12 h-12 text-black text-md md:text-2xl border-1 border-black dark:border-grey-box dark:bg-opacity-0 dark:text-white'}/>
+                        <Box word={'T'} bgColor={'bg-white'} style={'w-12 h-12 text-black text-md md:text-2xl border-1 border-black dark:border-grey-box dark:bg-opacity-0 dark:text-white'}/>
+                        <Box word={'O'} bgColor={'bg-white'} style={'w-12 h-12 text-black text-md md:text-2xl border-1 border-black dark:border-grey-box dark:bg-opacity-0 dark:text-white'}/>
+                        <Box word={'S'} bgColor={'bg-white'} style={'w-12 h-12 text-black text-md md:text-2xl border-1 border-black dark:border-grey-box dark:bg-opacity-0 dark:text-white'}/>
                     </div>
                     <p>La letra <strong>G</strong> está en la palabra y en la posición correcta.</p>
                     <div className='flex gap-2 justify-center mt-1'>
-                        <Box word={'V'} bgColor={'bg-white'} style={'w-12 h-12 text-black text-md md:text-2xl border-1 border-black dark:border-grey-box dark:bg-opacity-0'}/>
-                        <Box word={'O'} bgColor={'bg-white'} style={'w-12 h-12 text-black text-md md:text-2xl border-1 border-black dark:border-grey-box dark:bg-opacity-0'}/>
-                        <Box word={'C'} bgColor={'bg-yellow-box'} style={'w-12 h-12 text-black text-md md:text-2xl border-1 border-black'}/>
-                        <Box word={'A'} bgColor={'bg-white'} style={'w-12 h-12 text-black text-md md:text-2xl border-1 border-black dark:border-grey-box dark:bg-opacity-0'}/>
-                        <Box word={'L'} bgColor={'bg-white'} style={'w-12 h-12 text-black text-md md:text-2xl border-1 border-black dark:border-grey-box dark:bg-opacity-0'}/>
+                        <Box word={'V'} bgColor={'bg-white'} style={'w-12 h-12 text-black text-md md:text-2xl border-1 border-black dark:border-grey-box dark:bg-opacity-0 dark:text-white'}/>
+                        <Box word={'O'} bgColor={'bg-white'} style={'w-12 h-12 text-black text-md md:text-2xl border-1 border-black dark:border-grey-box dark:bg-opacity-0 dark:text-white'}/>
+                        <Box word={'C'} bgColor={'bg-yellow-box'} style={'w-12 h-12 text-black text-md md:text-2xl border-1 border-black dark:text-white'}/>
+                        <Box word={'A'} bgColor={'bg-white'} style={'w-12 h-12 text-black text-md md:text-2xl border-1 border-black dark:border-grey-box dark:bg-opacity-0 dark:text-white'}/>
+                        <Box word={'L'} bgColor={'bg-white'} style={'w-12 h-12 text-black text-md md:text-2xl border-1 border-black dark:border-grey-box dark:bg-opacity-0 dark:text-white'}/>
                     </div>
                     <p>La letra <strong>C</strong> está en la palabra pero en la posición incorrecta.</p>
                     <div className='flex gap-2 justify-center mt-1'>
-                        <Box word={'C'} bgColor={'bg-white'} style={'w-12 h-12 text-black text-md md:text-2xl border-1 border-black dark:border-grey-box dark:bg-opacity-0'}/>
-                        <Box word={'A'} bgColor={'bg-white'} style={'w-12 h-12 text-black text-md md:text-2xl border-1 border-black dark:border-grey-box dark:bg-opacity-0'}/>
-                        <Box word={'N'} bgColor={'bg-white'} style={'w-12 h-12 text-black text-md md:text-2xl border-1 border-black dark:border-grey-box dark:bg-opacity-0'}/>
-                        <Box word={'T'} bgColor={'bg-white'} style={'w-12 h-12 text-black text-md md:text-2xl border-1 border-black dark:border-grey-box dark:bg-opacity-0'}/>
-                        <Box word={'O'} bgColor={'bg-grey-box'} style={'w-12 h-12 text-black text-md md:text-2xl border-1 border-black'}/>
+                        <Box word={'C'} bgColor={'bg-white'} style={'w-12 h-12 text-black text-md md:text-2xl border-1 border-black dark:border-grey-box dark:bg-opacity-0 dark:text-white'}/>
+                        <Box word={'A'} bgColor={'bg-white'} style={'w-12 h-12 text-black text-md md:text-2xl border-1 border-black dark:border-grey-box dark:bg-opacity-0 dark:text-white'}/>
+                        <Box word={'N'} bgColor={'bg-white'} style={'w-12 h-12 text-black text-md md:text-2xl border-1 border-black dark:border-grey-box dark:bg-opacity-0 dark:text-white'}/>
+                        <Box word={'T'} bgColor={'bg-white'} style={'w-12 h-12 text-black text-md md:text-2xl border-1 border-black dark:border-grey-box dark:bg-opacity-0 dark:text-white'}/>
+                        <Box word={'O'} bgColor={'bg-grey-box'} style={'w-12 h-12 text-black text-md md:text-2xl border-1 border-black dark:text-white'}/>
                     </div>
                     <p>La letra <strong>O</strong> no está en la palabra.</p>
                     <p className='mt-3'>Pueden haber letras repetidas. Las pistas son independientes para cada letra.</p>

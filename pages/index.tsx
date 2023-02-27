@@ -19,13 +19,12 @@ const Home: NextPage = () => {
 
   return (
     <>
-      <div className="min-h-screen w-full text-center items-center justify-start bg-white-bg dark:bg-blue-bg">
+      <div className="min-h-screen w-full text-center items-center bg-white-bg dark:bg-blue-bg">
         <Head>
           <title>DDR WORDLE</title>
           <link rel="icon" href="/favicon.ico" />
         </Head>
-
-        <main className="flex min-h-screen flex-1 flex-col items-center justify-center text-center py-2 px-5 md:w-2/5 mx-auto">
+        <main className="flex min-h-screen flex-1 flex-col items-center justify-start text-center pt-4 px-2 md:pt-10 md:w-2/5 mx-auto">
           <ToogleBar showHelp={() => setShowHelpModal(true)} showStats={() =>  setShowStatsModal({show: true, isEnd: false})}/>
           {
               Array(5).fill(0).map((_, i) => (
@@ -35,10 +34,9 @@ const Home: NextPage = () => {
           }
           <KeyBoard/>
         </main>
-
       </div>
-        <HelpModal showModal={showHelpModal} hideModal={() => setShowHelpModal(false)}/>
-        <StatsModal showModal={showStatsModal} hideModal={() => setShowStatsModal({isEnd: true, show: false})} stats={stats} currentGame={currentGame} loadGame={loadGame}/>
+      <HelpModal showModal={showHelpModal} hideModal={() => setShowHelpModal(false)}/>
+      <StatsModal showModal={showStatsModal} hideModal={() => setShowStatsModal({isEnd: true, show: false})} stats={stats} currentGame={currentGame} loadGame={loadGame}/>
     </>
   )
 }
