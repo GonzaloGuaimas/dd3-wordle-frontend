@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { initGame, isGuessed, isRowComplete, isValidWord } from '../lib/game'
+import { initGame, isGuessed } from '../lib/game'
 import { getGameFromLocalStorage, getStatsFromLocalStorage, saveGameToLocalStorage, saveStatsToLocalStorage, StoredGameState, StoredGameStats } from '../lib/localStorage'
 import { initStats } from '../lib/stats'
 import { isFirstTime } from '../services/isFirstTime'
