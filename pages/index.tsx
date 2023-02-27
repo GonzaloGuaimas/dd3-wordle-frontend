@@ -19,8 +19,7 @@ const Home: NextPage = () => {
 
   return (
     <>
-      <div className="min-h-screen w-full text-center items-center justify-center bg-white-bg dark:bg-blue-bg">
-        {/* <div className="min-h-screen flex flex-col items-center justify-center bg-white-bg dark:bg-blue-bg"> */}
+      <div className="min-h-screen w-full text-center items-center justify-start bg-white-bg dark:bg-blue-bg">
         <Head>
           <title>DDR WORDLE</title>
           <link rel="icon" href="/favicon.ico" />
