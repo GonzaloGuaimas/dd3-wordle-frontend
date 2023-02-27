@@ -29,7 +29,7 @@ const Home: NextPage = () => {
           <title>DDR WORDLE</title>
           <link rel="icon" href="/favicon.ico" />
         </Head>
-        <main className="flex min-h-screen flex-1 flex-col items-center justify-start text-center pt-4 px-2 md:pt-10 md:w-2/5 mx-auto">
+        <main className="flex min-h-screen flex-1 flex-col items-center justify-start text-center pt-4 px-2 md:pt-10 sm:w-2/3 md:w-3/5 lg:w-5/12 xl:w-4/12 2xl:w-3/12 mx-auto">
           <ToogleBar showHelp={() => setShowHelpModal(true)} showStats={() =>  setShowStatsModal({show: true, isEnd: false})}/>
           {
               Array(5).fill(0).map((_, i) => (
