@@ -1,5 +1,4 @@
 import React from 'react'
-import help from '../../assets/help.svg'
 
 const HelpIcon = () => {
   return (
