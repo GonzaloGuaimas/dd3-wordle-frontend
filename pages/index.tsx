@@ -8,6 +8,7 @@ import ToogleBar from '../components/ToogleBar'
 import WordsRow from '../components/WordsRow'
 import useGame from '../hooks/useGame'
 import useKeyBoard from '../hooks/useKeyBoard'
+import useTimer from '../hooks/useTimer'
 import { defaultGameState, defaultGameStats,StoredGameState, StoredGameStats } from '../lib/localStorage'
 
 const Home: NextPage = () => {
@@ -15,9 +16,11 @@ const Home: NextPage = () => {
   const [stats, setStats] = useState<StoredGameStats>(defaultGameStats)
   const [showHelpModal, setShowHelpModal] = useState(false)
   const [showStatsModal, setShowStatsModal] = useState({show: false, isEnd: false})
-  
+  const [time, setTime] = useState(0)
+
   const { loadGame } = useGame(stats, currentGame, setCurrentGame, setStats, setShowHelpModal, setShowStatsModal)
   const { handleOnClickKeyDown } = useKeyBoard(currentGame, setCurrentGame)
+  const { handleReset } = useTimer(setTime)
 
   return (
     <>
@@ -37,8 +40,9 @@ const Home: NextPage = () => {
           <KeyBoard handleOnClickKeyDown={handleOnClickKeyDown} currentGame={currentGame}/>
         </main>
       </div>
+
       <HelpModal showModal={showHelpModal} hideModal={() => setShowHelpModal(false)}/>
-      <StatsModal showModal={showStatsModal} hideModal={() => setShowStatsModal({isEnd: true, show: false})} stats={stats} currentGame={currentGame} loadGame={loadGame}/>
+      <StatsModal showModal={showStatsModal} hideModal={() => setShowStatsModal({isEnd: true, show: false})} stats={stats} currentGame={currentGame} loadGame={loadGame} time={time} handleReset={handleReset}/>
     </>
   )
 }

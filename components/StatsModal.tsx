@@ -1,10 +1,11 @@
 import React from 'react'
+import useTimer from '../hooks/useTimer'
 import { StoredGameState, StoredGameStats } from '../lib/localStorage'
-import Box from './pure/Box'
+import { formatTime } from '../services/formatTime'
 
 const StatsModal = (
-    { showModal, hideModal, stats, currentGame, loadGame }: 
-    { showModal: any, hideModal: Function, stats: StoredGameStats, currentGame: StoredGameState, loadGame: Function }
+    { showModal, hideModal, stats, currentGame, loadGame, time, handleReset }: 
+    { showModal: any, hideModal: Function, stats: StoredGameStats, currentGame: StoredGameState, loadGame: Function, time: number, handleReset: Function }
     ) => {
   return (
     <div className={showModal.show ? "modal-background" : "hidden"}>
@@ -29,9 +30,9 @@ const StatsModal = (
                     }
                     <div className='mb-4'>
                     <p>SIGUIENTE PALABRA</p>
-                    <h2 className='font-bold'>04:10</h2>
+                    <h2 className='font-bold'>{formatTime(time)}</h2>
                     </div>
-                    <button onClick={() =>{ showModal.isEnd ? loadGame() : null, hideModal()}} className='bg-green-box rounded-md mx-auto px-14 py-1 text-white font-bold text-lg'>
+                    <button onClick={() =>{ showModal.isEnd ? (loadGame(), handleReset()) : null, hideModal()}} className='bg-green-box rounded-md mx-auto px-14 py-1 text-white font-bold text-lg'>
                         Aceptar
                     </button>
                 </div>
