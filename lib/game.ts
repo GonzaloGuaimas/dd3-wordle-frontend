@@ -1,5 +1,6 @@
 import { filterFiveLettersWords } from '../services/filterFiveLettersWords'
 import { getRandomWord } from '../services/getRandomWord'
+import { toNormalForm } from '../services/wordToNormalize'
 import { getStatsFromLocalStorage, saveGameToLocalStorage, StoredGameState } from './localStorage'
 
 export const initGame = () => {
@@ -31,5 +32,5 @@ export const isRowCheck = ( index: number, currentGame: StoredGameState) => {
 }
 
 export const isGuessed = (_currentGame: StoredGameState) => {
-    return _currentGame.typedWords[_currentGame.currentRow] === _currentGame.currentWord
+    return toNormalForm(_currentGame.typedWords[_currentGame.currentRow]) === toNormalForm(_currentGame.currentWord)
 }
