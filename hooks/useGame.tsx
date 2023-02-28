@@ -20,11 +20,12 @@ const useGame = (stats: StoredGameStats, currentGame: StoredGameState, setCurren
         setShowStatsModal({show: true, isEnd: true})
         setStats((prevStats: StoredGameStats) => (
           {
-            winsCounter: isGuessed(currentGame) ? prevStats.winsCounter++ : prevStats.winsCounter,
-            gamesCounter: prevStats.gamesCounter++,
+            ...prevStats,
             wordsPlayed: [...prevStats.wordsPlayed, currentGame.currentWord]
           }
         ))
+        isGuessed(currentGame) ? stats.winsCounter++ : null
+        stats.gamesCounter++
       }
       saveGameToLocalStorage(currentGame)
     }

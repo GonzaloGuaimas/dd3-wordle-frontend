@@ -35,7 +35,6 @@ const useKeyBoard = (currentGame: StoredGameState, setCurrentGame: Function) => 
 
     const deleteWord = () => {
         setCurrentGame((prevGame: StoredGameState) => {
-            console.log(prevGame, 'gam')
             const _typedWords = [...prevGame.typedWords]
             _typedWords[currentGame.currentRow] = _typedWords[currentGame.currentRow].slice(0, _typedWords[currentGame.currentRow].length - 1)
             return {
