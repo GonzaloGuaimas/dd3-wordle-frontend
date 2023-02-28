@@ -11,7 +11,6 @@ const useTimer = (setTime: Function, loadGame: Function, setShowStatsModal: Func
         setTime(60 * 5)
         saveTimeToLocalStorage(60 * 5)
     }
-
   }, [])
 
   useEffect(() => {
@@ -21,7 +20,7 @@ const useTimer = (setTime: Function, loadGame: Function, setShowStatsModal: Func
         setTime((prevTime: number) => {
             const newTime = prevTime - 1
             saveTimeToLocalStorage(newTime)
-            if (newTime < 0) setShowStatsModal({show: true, isEnd: true}), loadGame()
+            if (newTime < 0) setShowStatsModal({show: true, isEnd: true})
             return newTime
         });
         

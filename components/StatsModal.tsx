@@ -30,7 +30,7 @@ const StatsModal = (
                     }
                     <div className='mb-4'>
                     <p>SIGUIENTE PALABRA</p>
-                    <h2 className='font-bold'>{formatTime(time)}</h2>
+                    <h2 className='font-bold'>{(time < 0) ? '00:00' : formatTime(time)}</h2>
                     </div>
                     <button onClick={() =>{ showModal.isEnd ? (loadGame(), handleReset()) : null, hideModal()}} className='bg-green-box rounded-md mx-auto px-14 py-1 text-white font-bold text-lg'>
                         Aceptar
