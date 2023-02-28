@@ -32,5 +32,5 @@ export const isRowCheck = ( index: number, currentGame: StoredGameState) => {
 }
 
 export const isGuessed = (_currentGame: StoredGameState) => {
-    return toNormalForm(_currentGame.typedWords[_currentGame.currentRow]) === toNormalForm(_currentGame.currentWord)
+    return toNormalForm(_currentGame.typedWords[_currentGame.currentRow-1]) === toNormalForm(_currentGame.currentWord)
 }
