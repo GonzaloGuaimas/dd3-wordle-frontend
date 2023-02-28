@@ -1,3 +1,3 @@
 export const toNormalForm = (word: string) => {
-    return word.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+    if (word) return word.normalize("NFD").replace(/[\u0300-\u036f]/g, "")
 }
