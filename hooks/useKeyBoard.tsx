@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { isRowComplete } from '../lib/game'
+import { isRowComplete, isValidWord } from '../lib/game'
 import { StoredGameState } from '../lib/localStorage'
 
 const useKeyBoard = (currentGame: StoredGameState, setCurrentGame: Function) => {
@@ -47,7 +47,7 @@ const useKeyBoard = (currentGame: StoredGameState, setCurrentGame: Function) => 
     const handleKeyDown = (event: KeyboardEvent) => {
         if (!isRowComplete(currentGame) && event.key.match(/^[A-z]$/)) {
             addWord(event.key)
-        } else if (event.key === 'Enter' && isRowComplete(currentGame)) {
+        } else if (event.key === 'Enter' && isRowComplete(currentGame) && isValidWord(currentGame.typedWords[currentGame.currentRow])) {
             addCompletedRow()
         } else if (event.key === 'Backspace') {
             deleteWord()
@@ -61,7 +61,7 @@ const useKeyBoard = (currentGame: StoredGameState, setCurrentGame: Function) => 
         }
         if (!isRowComplete(currentGame) && target.value != 'Enter' && target.value != 'Backspace') {
             addWord(target.value)
-        } else if (target.value === 'Enter' && isRowComplete(currentGame)) {
+        } else if (target.value === 'Enter' && isRowComplete(currentGame) && isValidWord(currentGame.typedWords[currentGame.currentRow])) {
             addCompletedRow()
         } else if (target.value === 'Backspace') {
             deleteWord()
